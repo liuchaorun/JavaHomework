@@ -22,7 +22,7 @@ public class Catalan {
             to.addLast(s.pop());
             go(from, to, s);
         }
-        if (fromClone.size() > 0) {
+        if (fromClone.size() > 0 && sClone.size() < 4) {
             sClone.push(fromClone.getFirst());
             fromClone.removeFirst();
             go(fromClone, toClone, sClone);
