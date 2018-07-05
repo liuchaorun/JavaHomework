@@ -17,6 +17,9 @@ public class Graph {
         for (int i:mark){
             i = 0;
         }
+    }
+
+    public void init(){
         setGraphEdge(0,1,2);
         setGraphEdge(0,2,5);
         setGraphEdge(0,3,1);
@@ -75,6 +78,7 @@ public class Graph {
     public static void main(String[] args){
         char[] table = {'A','B','C','D','E','F'};
         Graph g = new Graph();
+        g.init();
         int[] dist = new int[g.getPointNumber()];
         int[] length = new int[g.getPointNumber()];
         for (int i = 0; i < g.getPointNumber(); ++i){

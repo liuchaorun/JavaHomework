@@ -1,26 +1,16 @@
 package cn.liuchaorun.learning;
 
-import cn.liuchaorun.learning.person.Employee;
+import cn.liuchaorun.learning.person.TalkingClock;
+
+import javax.swing.*;
 
 public class test {
-    public static void main(String[] args){
-        Size a = Size.LARGER;
-        System.out.println(a.getAbbreviation());
-        Size b = Enum.valueOf(Size.class,"SMALL");
-        System.out.println(b.ordinal());
+    public static void main(String[] args) {
+        TalkingClock clock = new TalkingClock(1000,true);
+        clock.start();
+        TalkingClock.TimerPrinter l = clock.new TimerPrinter();
+
+        JOptionPane.showMessageDialog(null,"quit?");
+        System.exit(0);
     }
-}
-
-enum Size{
-    SMALL("S"),LARGER("L");
-
-    private Size(String abbreviation){
-        this.abbreviation = abbreviation;
-    }
-
-    public String getAbbreviation() {
-        return abbreviation;
-    }
-
-    private String abbreviation;
 }
