@@ -2,6 +2,8 @@ package cn.liuchaorun.firstHomework;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+
 public class Base64 {
     private static char[] table = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
@@ -86,11 +88,11 @@ public class Base64 {
         String s = encode(a);
         System.out.println(s);
         byte[] b = decode(s);
-        for (int i = 0; i < b.length; i++) {
-            System.out.print(b[i] + " ");
+        for (byte i : b) {
+            System.out.print(i + " ");
         }
+        System.out.println(new String(table));
         System.out.println();
-
     }
 
 }
