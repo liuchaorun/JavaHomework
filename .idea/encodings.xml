@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/cn/liuchaorun/learning/person/Acount.java" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/src/cn/liuchaorun/secondHomework/fifth/Dictionary.java" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/src/cn/liuchaorun/secondHomework/seventh/Q2Resources/BinaryTreeBasis.java" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/src/cn/liuchaorun/secondHomework/seventh/TextZip.java" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/src/cn/liuchaorun/secondHomework/sixth/FindTheSameFile.java" charset="GBK" />
   </component>
 </project>
