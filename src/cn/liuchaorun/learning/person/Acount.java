@@ -5,9 +5,12 @@
  */
 package cn.liuchaorun.learning.person;
 
+import javax.swing.*;
+
 public class Acount {
 
     private int money;
+    private Object lock1 = new Byte[0];
 
     public Acount(int money) {
         this.money = money;
@@ -16,6 +19,7 @@ public class Acount {
     public synchronized void getMoney(int money) {
         // 注意这个地方必须用while循环，因为即便再存入钱也有可能比取的要少
         while (this.money < money) {
+            System.out.print(Thread.currentThread().getName());
             System.out.println("取款：" + money + " 余额：" + this.money
                     + " 余额不足，正在等待存款......");
             try {
@@ -25,18 +29,18 @@ public class Acount {
             }
         }
         this.money = this.money - money;
+        System.out.print(Thread.currentThread().getName());
         System.out.println("取出：" + money + " 还剩余：" + this.money);
-
     }
 
     public synchronized void setMoney(int money) {
-
         try {
             Thread.sleep(10);
         } catch (Exception e) {
             e.printStackTrace();
         }
         this.money = this.money + money;
+        System.out.print(Thread.currentThread().getName());
         System.out.println("新存入：" + money + " 共计：" + this.money);
         notify();
     }
@@ -51,6 +55,10 @@ public class Acount {
         for (int i = 0; i < 3; i++){
             new Thread(c,"customer" + Integer.toString(i)).start();
         }
+        Timer t = new Timer(1000,(event)->{
+            System.out.println(Thread.currentThread().getName());
+        });
+        t.start();
     }
 }
 

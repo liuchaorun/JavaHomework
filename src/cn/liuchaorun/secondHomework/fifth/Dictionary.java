@@ -34,7 +34,8 @@ public class Dictionary {
 
     public boolean add(String s,String t){
         try {
-            PrintWriter p = new PrintWriter(f);
+            FileWriter fw = new FileWriter(f,true);
+            PrintWriter p = new PrintWriter(fw);
             p.println(s);
             p.println(t);
             p.flush();
@@ -42,8 +43,8 @@ public class Dictionary {
             p.close();
             return true;
         }
-        catch (FileNotFoundException err){
-            System.out.println(err.toString());
+        catch (IOException err){
+            err.printStackTrace();
             return false;
         }
     }
